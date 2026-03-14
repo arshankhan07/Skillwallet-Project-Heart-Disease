@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Dashboards — DataVision{% endblock %}
+
+{% block content %}
+
+<section class="page-hero small">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="page-hero-content">
+    <p class="section-eyebrow">Interactive Analytics</p>
+    <h1>Dashboards</h1>
+    <p class="page-sub">Explore live data through interactive Tableau visualizations.</p>
+  </div>
+</section>
+
+<section class="embed-section">
+
+  <!-- Dashboard 1 -->
+  <div class="embed-block">
+    <div class="embed-header">
+      <div class="embed-meta">
+        <span class="embed-icon">{{ d1.icon }}</span>
+        <div>
+          <h2>{{ d1.name }}</h2>
+          <p>{{ d1.description }}</p>
+        </div>
+      </div>
+      <div class="embed-actions">
+        <a href="{{ d1.url }}" target="_blank" class="btn btn-outline">Open in Tableau ↗</a>
+      </div>
+    </div>
+    <div class="tableau-container">
+      <div class="tableau-loading" id="load-d1">
+        <div class="spinner"></div>
+        <span>Loading dashboard…</span>
+      </div>
+      <iframe
+        src="{{ d1.url }}?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&publish=yes&:display_count=n"
+        width="100%" height="100%"
+        frameborder="0" allowfullscreen
+        onload="hideLoader('load-d1')"
+        style="position:absolute;top:0;left:0;border:none;"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Dashboard 2 -->
+  <div class="embed-block">
+    <div class="embed-header">
+      <div class="embed-meta">
+        <span class="embed-icon">{{ d2.icon }}</span>
+        <div>
+          <h2>{{ d2.name }}</h2>
+          <p>{{ d2.description }}</p>
+        </div>
+      </div>
+      <div class="embed-actions">
+        <a href="{{ d2.url }}" target="_blank" class="btn btn-outline">Open in Tableau ↗</a>
+      </div>
+    </div>
+    <div class="tableau-container">
+      <div class="tableau-loading" id="load-d2">
+        <div class="spinner"></div>
+        <span>Loading dashboard…</span>
+      </div>
+      <iframe
+        src="{{ d2.url }}?:embed=yes&:showVizHome=no&:toolbar=yes&:tabs=no&publish=yes&:display_count=n"
+        width="100%" height="100%"
+        frameborder="0" allowfullscreen
+        onload="hideLoader('load-d2')"
+        style="position:absolute;top:0;left:0;border:none;"
+      ></iframe>
+    </div>
+  </div>
+
+</section>
+
+<script>
+function hideLoader(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.style.opacity = '0';
+    setTimeout(() => el.style.display = 'none', 500);
+  }
+}
+// Safety fallback — hide loaders after 10s no matter what
+setTimeout(() => hideLoader('load-d1'), 10000);
+setTimeout(() => hideLoader('load-d2'), 10000);
+</script>
+
+{% endblock %}

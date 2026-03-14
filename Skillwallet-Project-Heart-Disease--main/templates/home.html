@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}DataVision Analytics — Home{% endblock %}
+
+{% block content %}
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Live Analytics Platform</div>
+    <h1 class="hero-title">
+      Data that<br/>
+      <span class="gradient-text">drives action</span>
+    </h1>
+    <p class="hero-sub">
+      Interactive Tableau dashboards and stories — all in one place.
+      Explore insights, track performance, and tell your data's story.
+    </p>
+    <div class="hero-actions">
+      <a href="/dashboards" class="btn btn-primary">Explore Dashboards →</a>
+      <a href="/story" class="btn btn-ghost">View Story</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Dashboards</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">1</span><span class="stat-label">Story</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">Live</span><span class="stat-label">Tableau Data</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="dashboard-preview">
+      <div class="preview-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="preview-url">tableau.datavision.io</span>
+      </div>
+      <div class="preview-body">
+        <div class="preview-chart bar-chart">
+          <div class="bar" style="height:55%"></div>
+          <div class="bar" style="height:80%"></div>
+          <div class="bar" style="height:45%"></div>
+          <div class="bar" style="height:90%"></div>
+          <div class="bar" style="height:65%"></div>
+          <div class="bar" style="height:75%"></div>
+        </div>
+        <div class="preview-kpis">
+          <div class="kpi-card"><span class="kpi-val">↑ 24%</span><span class="kpi-lbl">Growth</span></div>
+          <div class="kpi-card accent"><span class="kpi-val">$2.4M</span><span class="kpi-lbl">Revenue</span></div>
+          <div class="kpi-card"><span class="kpi-val">98.2%</span><span class="kpi-lbl">Uptime</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FEATURE CARDS ══════════ -->
+<section class="features">
+  <div class="section-header">
+    <p class="section-eyebrow">What's Inside</p>
+    <h2>Your analytics, beautifully presented</h2>
+  </div>
+  <div class="feature-grid">
+    <a href="/dashboards" class="feature-card card-glow">
+      <div class="card-icon">{{ tableau.dashboard1.icon }}</div>
+      <h3>{{ tableau.dashboard1.name }}</h3>
+      <p>{{ tableau.dashboard1.description }}</p>
+      <span class="card-arrow">→</span>
+    </a>
+    <a href="/dashboards" class="feature-card card-glow">
+      <div class="card-icon">{{ tableau.dashboard2.icon }}</div>
+      <h3>{{ tableau.dashboard2.name }}</h3>
+      <p>{{ tableau.dashboard2.description }}</p>
+      <span class="card-arrow">→</span>
+    </a>
+    <a href="/story" class="feature-card card-glow featured">
+      <div class="card-icon">{{ tableau.story.icon }}</div>
+      <h3>{{ tableau.story.name }}</h3>
+      <p>{{ tableau.story.description }}</p>
+      <span class="card-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════ METRICS STRIP ══════════ -->
+<section class="metrics-strip">
+  <div class="metric"><span>Real-time Data</span></div>
+  <div class="metric-sep">◈</div>
+  <div class="metric"><span>Interactive Filters</span></div>
+  <div class="metric-sep">◈</div>
+  <div class="metric"><span>Tableau Public</span></div>
+  <div class="metric-sep">◈</div>
+  <div class="metric"><span>Responsive Design</span></div>
+  <div class="metric-sep">◈</div>
+  <div class="metric"><span>Shareable Insights</span></div>
+</section>
+
+{% endblock %}
